@@ -22,8 +22,8 @@ function Character() {
     
     useEffect(()=>{
       FetchingData()
-      
-    },[FetchingData])
+    },[])
+    
   return (
     <>
       <Link to={"/"}>

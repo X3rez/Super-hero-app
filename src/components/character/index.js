@@ -22,7 +22,7 @@ function Character() {
             setLoaded(true)
         }
       FetchingData()
-    },[])
+    },[id])
     
   return (
     <>

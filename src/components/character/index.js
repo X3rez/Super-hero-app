@@ -11,16 +11,16 @@ function Character() {
     const {id} = useParams();
     const [CharacterData,setCharacterData] = useState({})
     const [loaded,setLoaded] = useState(false)
-
-    const FetchingData = async ()=> {
-        const data = await fetch(`https://www.superheroapi.com/api.php/2789327074652475/${id}`)
-        const res = await data.json();   
-        setCharacterData(res)
-        setLoaded(true)
-    }
     
     
     useEffect(()=>{
+        
+        const FetchingData = async ()=> {
+            const data = await fetch(`https://www.superheroapi.com/api.php/2789327074652475/${id}`)
+            const res = await data.json();   
+            setCharacterData(res)
+            setLoaded(true)
+        }
       FetchingData()
     },[])
     

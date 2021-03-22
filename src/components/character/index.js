@@ -4,15 +4,13 @@ import {H1,H2,H3,Img,Div,Stats } from "./styles";
 
 import { IoIosArrowDropleftCircle } from 'react-icons/io';
 
-import {Link,useHistory,useParams} from "react-router-dom"
+import {Link,useParams} from "react-router-dom"
 
 
 function Character() {
     const {id} = useParams();
     const [CharacterData,setCharacterData] = useState({})
     const [loaded,setLoaded] = useState(false)
-    const history = useHistory();
-
 
     const FetchingData = async ()=> {
         const data = await fetch(`https://www.superheroapi.com/api.php/2789327074652475/${id}`)
@@ -25,7 +23,7 @@ function Character() {
     useEffect(()=>{
       FetchingData()
       
-    },[])
+    },[FetchingData])
   return (
     <>
       <Link to={"/"}>
